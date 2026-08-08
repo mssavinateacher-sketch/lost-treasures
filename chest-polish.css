@@ -1,0 +1,446 @@
+.home-nav #menuBtn { display: none !important; }
+.home-nav { padding-left: 6.2vw; }
+
+.live-progress {
+  left: auto;
+  right: .8%;
+  bottom: 0;
+  width: 34%;
+  height: 22%;
+}
+
+.live-progress #expeditionChest {
+  left: 50%;
+  bottom: 0;
+  width: 72%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.live-progress #scarabs {
+  left: 28.5%;
+  right: 28.5%;
+  bottom: 20%;
+  height: 23%;
+  gap: 10%;
+  align-items: center;
+}
+
+.live-progress #scarabs .scarab-dot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.live-progress button#resetBtn {
+  left: -8%;
+  right: auto;
+  bottom: 8%;
+}
+
+.master-scroll {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  transform: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  background: rgba(2, 22, 24, .86);
+  backdrop-filter: blur(5px);
+}
+
+.chest-complete .master-scroll {
+  display: flex;
+  animation: master-reveal .9s .65s both;
+}
+
+.chest-complete .master-scroll.dismissed { display: none; }
+
+.master-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(78vw, 980px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 218, 91, .62), rgba(255, 168, 21, .17) 38%, transparent 68%);
+  animation: master-glow 2.2s ease-in-out infinite;
+}
+
+.master-papyrus {
+  position: relative;
+  width: min(76vw, 840px);
+  min-height: min(72svh, 680px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(58px, 7vh, 78px) clamp(34px, 7vw, 90px);
+  color: #57300f;
+  text-align: center;
+  text-shadow: 0 1px #fff3bc;
+  border: 8px solid #995619;
+  border-radius: 5px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(83, 37, 7, .22), transparent 10%, transparent 90%, rgba(83, 37, 7, .22)),
+    radial-gradient(circle at 50% 43%, rgba(255, 240, 165, .75), transparent 34%),
+    repeating-linear-gradient(0deg, transparent 0 22px, rgba(134, 77, 24, .045) 23px 24px),
+    #e9b957;
+  box-shadow: 0 0 0 4px #f7dc91, 0 22px 60px #000b, inset 0 0 50px #7a350a77, inset 0 0 0 3px #d99a38;
+  animation: papyrus-unroll 1.15s .7s cubic-bezier(.16, .86, .24, 1.1) both;
+}
+
+.master-papyrus::before,
+.master-papyrus::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  width: 106%;
+  height: 34px;
+  border: 5px solid #9a581d;
+  border-radius: 50%;
+  background: linear-gradient(#f5d487, #c9903d);
+  box-shadow: 0 5px 10px #5b2b0e77;
+}
+
+.master-papyrus::before { top: -20px; }
+.master-papyrus::after { bottom: -20px; }
+
+.master-papyrus small {
+  font: 900 clamp(12px, 1.2vw, 18px) Nunito;
+  letter-spacing: 2px;
+  color: #8b4c14;
+}
+
+.papyrus-title {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 8px 0 12px;
+}
+
+.papyrus-title b {
+  align-self: center;
+  padding: 3px 24px 5px;
+  border-block: 2px solid #c8912d;
+  color: #70400f;
+  font: 900 clamp(18px, 2vw, 27px) "Baloo 2";
+}
+
+.hieroglyph-band {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 4%;
+  right: 4%;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-block: 2px solid #8a4b13;
+  color: #704010;
+  background: #c8872f33;
+  font: 400 clamp(22px, 3vw, 37px)/1 "Segoe UI Historic", "Noto Sans Egyptian Hieroglyphs", serif;
+  letter-spacing: 10px;
+  white-space: nowrap;
+  opacity: .88;
+}
+
+.hieroglyph-band.bottom {
+  top: auto;
+  bottom: 14px;
+}
+
+.master-seal {
+  position: relative;
+  z-index: 2;
+  width: clamp(210px, 23vw, 285px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 0 0 16px;
+  border: clamp(8px, 1vw, 13px) ridge #f7c844;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0b5156 0 50%, #07363b 51% 62%, #c17b18 63% 69%, #163b39 70%);
+  box-shadow: 0 0 0 4px #6e390d, 0 0 0 8px #e5a728, 0 0 28px #ffcc36aa, inset 0 0 30px #000a;
+}
+
+.master-seal::before,
+.master-seal::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 38%;
+  border: 7px solid #d99b22;
+  background: linear-gradient(135deg, #0b5558 18%, #e7b52f 19% 25%, #0a4247 26% 44%, #e7b52f 45% 51%, #082f34 52%);
+  filter: drop-shadow(0 3px #6c370c);
+}
+
+.master-seal::before {
+  right: 91%;
+  transform: translateY(-50%);
+  border-radius: 70% 12% 12% 70%;
+  clip-path: polygon(100% 7%, 58% 0, 0 22%, 36% 50%, 0 78%, 58% 100%, 100% 93%);
+}
+
+.master-seal::after {
+  left: 91%;
+  transform: translateY(-50%);
+  border-radius: 12% 70% 70% 12%;
+  clip-path: polygon(0 7%, 42% 0, 100% 22%, 64% 50%, 100% 78%, 42% 100%, 0 93%);
+}
+
+.master-seal > i {
+  position: absolute;
+  inset: 7%;
+  border: 2px solid #edb62f;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px #0bd0d044;
+}
+
+.master-papyrus .master-scarab {
+  position: relative;
+  z-index: 2;
+  width: 91%;
+  height: 91%;
+  filter: drop-shadow(0 0 8px #fff4ad) drop-shadow(0 10px 8px #0008);
+  animation: royal-scarab-arrive 1.3s 1.5s cubic-bezier(.16, .88, .3, 1.18) both, royal-scarab-glow 2.4s 2.8s ease-in-out infinite;
+}
+
+.master-papyrus strong {
+  position: relative;
+  z-index: 2;
+  font: 900 clamp(42px, 6vw, 78px)/.82 "Baloo 2";
+  color: #63350f;
+  text-shadow: 0 3px #ffe7a2, 0 7px 0 #b57028;
+  margin: 4px 0 0;
+}
+
+.master-papyrus span {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  font: 900 clamp(15px, 1.6vw, 23px) Nunito;
+  color: #814a17;
+}
+
+.royal-mark {
+  position: relative;
+  z-index: 2;
+  width: min(72%, 430px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  color: #75400f;
+}
+
+.royal-mark b {
+  font: 400 clamp(25px, 3vw, 40px) "Segoe UI Historic", serif;
+}
+
+.royal-mark i {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #8f5118 15% 85%, transparent);
+}
+
+.master-close {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  right: 22px;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #784010;
+  border-radius: 50%;
+  background: #f4cf7d;
+  color: #5c2d0b;
+  font: 900 32px/1 Nunito;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #71380e;
+}
+
+.chest-complete #scarabs {
+  bottom: 9.5%;
+  height: 23%;
+  opacity: 1;
+}
+
+@keyframes master-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes papyrus-unroll {
+  0% { opacity: 0; transform: translateY(18vh) scaleY(.06) scaleX(.72); }
+  55% { opacity: 1; transform: translateY(0) scaleY(1.04) scaleX(.96); }
+  100% { transform: none; }
+}
+
+@keyframes master-glow {
+  50% { opacity: .68; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+@keyframes royal-scarab-arrive {
+  0% { opacity: 0; transform: translateY(80px) scale(.28) rotate(-12deg); filter: brightness(4) drop-shadow(0 0 40px #fff); }
+  65% { opacity: 1; transform: translateY(-5px) scale(1.08) rotate(3deg); }
+  100% { transform: none; }
+}
+
+@keyframes royal-scarab-glow {
+  50% { filter: brightness(1.18) drop-shadow(0 0 15px #fff2a0) drop-shadow(0 0 28px #ffbc2d); }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .live-progress { left: auto; right: 1%; width: 58%; height: 21%; }
+  .live-progress #expeditionChest { width: 78%; }
+  .live-progress #scarabs { left: 26%; right: 26%; }
+  .live-progress button#resetBtn { left: -22%; right: auto; }
+  .master-papyrus { width: 86vw; min-height: 68svh; }
+}
+
+/* Final reward launches from the expedition chest as one cinematic asset. */
+.master-award-card {
+  position: relative;
+  z-index: 4;
+  height: min(89svh, 930px);
+  aspect-ratio: 1363 / 1154;
+  max-width: 94vw;
+  overflow: hidden;
+  border: 3px solid #e8b541;
+  border-radius: 6px;
+  background: #080705;
+  box-shadow: 0 0 0 2px #5f340e, 0 0 42px #ffbd35aa, 0 28px 80px #000d;
+  transform-origin: 92% 96%;
+  animation: award-flight 1.35s .62s cubic-bezier(.12, .8, .22, 1.08) both;
+}
+
+.master-award-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.master-exit {
+  position: absolute;
+  z-index: 6;
+  top: 18px;
+  right: 18px;
+  min-width: 112px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 2px solid #ffd66e;
+  border-radius: 5px;
+  background: linear-gradient(#6d320c, #351706);
+  color: #fff1bd;
+  font: 900 17px Nunito;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #170900, 0 0 18px #ffbd2c77;
+  transition: transform .18s, filter .18s;
+}
+
+.master-exit b {
+  font: 900 26px/1 Nunito;
+}
+
+.master-exit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.18);
+}
+
+.master-flight {
+  position: absolute;
+  z-index: 3;
+  right: 7%;
+  bottom: 5%;
+  width: 28vw;
+  height: 28vw;
+  pointer-events: none;
+}
+
+.master-flight::before {
+  content: "";
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: #fff1a3;
+  box-shadow: 0 0 35px #fff, 0 0 85px #ffc12c, 0 0 150px #ff8a00;
+  animation: chest-flash 1.2s .35s both;
+}
+
+.master-flight i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffe48a;
+  box-shadow: 0 0 12px #fff2a8;
+  --angle: calc(var(--i, 0) * 30deg);
+  animation: reward-spark 1.15s .42s ease-out both;
+}
+
+.master-flight i:nth-child(1) { --i: 1; }
+.master-flight i:nth-child(2) { --i: 2; }
+.master-flight i:nth-child(3) { --i: 3; }
+.master-flight i:nth-child(4) { --i: 4; }
+.master-flight i:nth-child(5) { --i: 5; }
+.master-flight i:nth-child(6) { --i: 6; }
+.master-flight i:nth-child(7) { --i: 7; }
+.master-flight i:nth-child(8) { --i: 8; }
+.master-flight i:nth-child(9) { --i: 9; }
+.master-flight i:nth-child(10) { --i: 10; }
+.master-flight i:nth-child(11) { --i: 11; }
+.master-flight i:nth-child(12) { --i: 12; }
+
+@keyframes award-flight {
+  0% { opacity: 0; transform: translate(43vw, 43vh) scale(.045) rotate(7deg); filter: brightness(3); }
+  28% { opacity: 1; transform: translate(28vw, 21vh) scale(.22) rotate(4deg); filter: brightness(2.2); }
+  72% { transform: translate(-1vw, -1.5vh) scale(1.035) rotate(-.5deg); filter: brightness(1.12); }
+  100% { transform: none; filter: none; }
+}
+
+@keyframes chest-flash {
+  0% { opacity: 0; transform: scale(.1); }
+  32% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 0; transform: scale(3); }
+}
+
+@keyframes reward-spark {
+  0% { opacity: 0; transform: translate(0, 0) scale(.2); }
+  24% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--angle)) translateX(15vw) scale(1.4); }
+}
+
+@media (max-width: 700px) {
+  .master-award-card {
+    width: 94vw;
+    height: auto;
+    max-height: 88svh;
+  }
+
+  .master-exit {
+    top: 10px;
+    right: 10px;
+    min-width: 92px;
+    height: 42px;
+    font-size: 14px;
+  }
+}

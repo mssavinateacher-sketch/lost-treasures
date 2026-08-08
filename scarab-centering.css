@@ -1,0 +1,5 @@
+.live-progress{left:37.5%;width:27%;bottom:4.2%}
+.live-progress #scarabs{display:grid;grid-template-columns:repeat(3,clamp(50px,4.35vw,72px));grid-auto-rows:clamp(50px,4.35vw,72px);place-items:center;justify-content:center;align-content:center;column-gap:clamp(18px,1.45vw,28px);width:max-content;height:auto;margin:0 auto;transform:none}
+.live-progress .scarab-dot{display:block;width:100%;height:100%;margin:0;padding:0;align-self:center;justify-self:center;vertical-align:middle}
+.live-progress button#resetBtn{right:-4%;bottom:3%}
+@media(max-aspect-ratio:1/1){.live-progress{left:30%;width:40%}.live-progress #scarabs{grid-template-columns:repeat(3,clamp(42px,10vw,70px));grid-auto-rows:clamp(42px,10vw,70px);column-gap:10px}.live-progress button#resetBtn{right:-38%}}

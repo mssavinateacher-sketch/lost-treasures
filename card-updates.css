@@ -1,0 +1,9 @@
+/* Closed games show a centered lock; active games keep their PLAY hotspot. */
+.hotspot.locked{top:48%;width:8%;height:15%;border-radius:8px;pointer-events:auto}
+.hs-desert.locked{left:28%}.hs-tomb.locked{left:49.8%}.hs-treasure.locked{left:70.5%}
+.hotspot.locked span{width:46%;left:27%;top:53%}
+.live-progress{overflow:visible}
+.live-progress button#resetBtn{right:-34%;bottom:26%;width:auto;height:auto;min-height:32px;padding:5px 10px;border:2px solid #d49335;border-radius:6px;background:linear-gradient(#714019,#3b210f);box-shadow:0 3px 0 #211006,0 0 9px #d88d25;color:#ffe4a0;font:900 clamp(8px,.75vw,12px) Nunito;white-space:nowrap}
+.live-progress button#resetBtn:hover{filter:brightness(1.2);transform:translateY(-1px)}
+.live-progress button#resetBtn b{font-size:1.25em;margin-right:3px}
+@media(max-aspect-ratio:1/1){.hotspot.locked{top:43%;bottom:auto;width:14%;height:18%}.hs-desert.locked{left:17%}.hs-tomb.locked{left:43%}.hs-treasure.locked{left:69%}.live-progress button#resetBtn{right:-46%;bottom:18%}}

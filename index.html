@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lost Treasures of Egypt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="premium.css">
+  <link rel="stylesheet" href="showcase-fixes.css">
+  <link rel="stylesheet" href="screen-fit.css">
+  <link rel="stylesheet" href="card-updates.css">
+  <link rel="stylesheet" href="scarab-layout.css">
+  <link rel="stylesheet" href="alignment.css">
+  <link rel="stylesheet" href="scarab-centering.css">
+  <link rel="stylesheet" href="game-wow.css">
+  <link rel="stylesheet" href="reward.css">
+  <link rel="stylesheet" href="desert-path.css">
+  <link rel="stylesheet" href="navigation-fix.css">
+  <link rel="stylesheet" href="sandstorm.css">
+  <link rel="stylesheet" href="tomb-chase.css">
+  <link rel="stylesheet" href="tomb-capture.css">
+  <link rel="stylesheet" href="snake-question.css">
+  <link rel="stylesheet" href="snake-fit.css">
+  <link rel="stylesheet" href="treasure-hunt.css">
+  <link rel="stylesheet" href="audio-ui.css">
+  <link rel="stylesheet" href="expedition-chest.css">
+  <link rel="stylesheet" href="chest-polish.css">
+  <link rel="stylesheet" href="tomb-layout-unified.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar home-nav">
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <button class="icon-btn" id="soundBtn" type="button" aria-label="Toggle sound" onclick="toggleAudio();event.stopImmediatePropagation()">🔊</button>
+      <span class="mute-cross" aria-hidden="true"></span>
+      <label class="volume-slider home-volume" title="Volume"><span>VOL</span><input type="range" min="0" max="100" value="45" oninput="setAudioVolume(this.value)"></label>
+      <div class="brand"><small>THE LOST TREASURES OF</small><strong>EGYPT</strong><span>AN ENGLISH ADVENTURE</span></div>
+      <button class="wood-btn" id="helpBtn">? HOW TO PLAY</button>
+    </header>
+
+    <main id="home" class="screen active">
+      <section class="reference-stage" aria-label="The Lost Treasures of Egypt game map">
+        <img src="assets/egypt-home-reference.png" alt="Egypt adventure map with three games">
+        <button class="hotspot hs-desert" data-game="desert" onclick="openGame('desert')"><span>PLAY</span></button>
+        <button class="hotspot hs-tomb" data-game="tomb" onclick="openGame('tomb')"><span>PLAY</span></button>
+        <button class="hotspot hs-treasure" data-game="treasure" onclick="openGame('treasure')"><span>PLAY</span></button>
+        <div class="live-progress"><canvas id="expeditionChest" aria-label="Expedition treasure chest"></canvas><div id="scarabs"></div><div class="master-scroll" role="dialog" aria-label="Master Explorer award"><div class="master-glow"></div><div class="master-flight" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="master-award-card"><img src="assets/master-explorer-award.png" alt="Royal Decree: Master Explorer of Egypt"><button type="button" class="master-exit" onclick="dismissMasterScroll()"><span>EXIT</span><b>×</b></button></div></div><button id="resetBtn" title="Reset progress"><b>↻</b> RESET</button></div>
+      </section>
+    </main>
+
+    <main id="game" class="screen">
+      <header class="game-head"><button id="backBtn" class="icon-btn" type="button" onclick="goHome()" aria-label="Back to expedition map">←</button><div><small id="gameKicker"></small><h2 id="gameTitle"></h2></div><div class="game-audio"><button type="button" aria-label="Toggle sound" onclick="toggleAudio()"><span class="speaker-glyph">♪</span><span class="mute-cross"></span></button><label class="volume-slider"><input type="range" min="0" max="100" value="45" oninput="setAudioVolume(this.value)"></label></div><div class="room-count" id="roomCount"></div></header>
+      <section id="scene" class="scene"></section>
+      <section id="challenge" class="challenge"></section>
+    </main>
+  </div>
+
+  <dialog id="modal"><button class="close" aria-label="Close">×</button><div id="modalBody"></div></dialog>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

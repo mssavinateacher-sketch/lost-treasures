@@ -1,0 +1,2 @@
+.reference-stage>img{object-fit:fill}
+@media(max-aspect-ratio:1/1){.reference-stage>img{object-fit:cover}.hotspot{top:auto;bottom:25.9%}.live-progress{bottom:3.5%}}

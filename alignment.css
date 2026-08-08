@@ -1,0 +1,13 @@
+/* Coordinates calibrated against the 1920 x 920 showcase viewport. */
+.hs-desert:not(.locked){left:26.3%;width:11.6%}.hs-tomb:not(.locked){left:47.2%;width:11.9%}.hs-treasure:not(.locked){left:69.8%;width:12.4%}
+.hotspot:not(.locked):hover{box-shadow:0 0 0 3px #fff1a0,0 0 12px #ffd22e,0 0 26px #ffae17;transform:translateY(-1px)}
+.hotspot.locked{top:48%;width:6%;height:15%}.hs-desert.locked{left:29.9%}.hs-tomb.locked{left:50.2%}.hs-treasure.locked{left:73.1%}
+.hotspot.locked span{width:52%;left:24%;top:52%}
+.live-progress{left:39%;bottom:4.2%;width:27%;height:11.5%}
+.live-progress #scarabs{gap:clamp(18px,1.45vw,28px);transform:translateY(-2%)}
+.live-progress .scarab-dot{width:clamp(50px,4.35vw,72px);height:clamp(50px,4.35vw,72px)}
+.live-progress canvas.silhouette{opacity:.66;filter:brightness(0) sepia(1) drop-shadow(0 1px 0 #d19a4e) drop-shadow(0 0 3px #44250f)}
+.live-progress canvas.earned{opacity:1;filter:drop-shadow(0 0 3px #fff0a0) drop-shadow(0 0 8px #e89700)}
+.live-progress .silhouette:before,.live-progress .silhouette:after{content:none}
+.live-progress button#resetBtn{right:1%;bottom:3%;padding:4px 8px;min-height:28px;box-shadow:0 2px 0 #211006,0 0 6px #d88d25}
+@media(max-aspect-ratio:1/1){.hotspot.locked{top:43%;width:12%;height:18%}.hs-desert.locked{left:18%}.hs-tomb.locked{left:44%}.hs-treasure.locked{left:70%}.live-progress{left:32%;bottom:3.5%;width:40%;height:12%}.live-progress #scarabs{gap:10px}.live-progress button#resetBtn{right:-34%;bottom:8%}}
